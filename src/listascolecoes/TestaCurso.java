@@ -27,7 +27,7 @@ public class TestaCurso {
         colecoes2.adicionaAula(new Aula("Colecao Java 2", 23));
         colecoes2.adicionaAula(new Aula("Pós graduação em Java", 500 ));
         colecoes2.adicionaAula(new Aula("git", 30));
-        System.out.println(colecoes2);
+
     }
     
 }

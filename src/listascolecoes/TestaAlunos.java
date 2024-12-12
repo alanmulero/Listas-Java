@@ -44,6 +44,14 @@ public class TestaAlunos {
         
         List<String> alunosEmLista = new ArrayList<>(alunos);
         System.out.println(alunosEmLista.get(1));
+
+        // Testando se aluno esta matriculado
+        System.out.println(alunos.contains("alan"));
+
+        //Testando o equals em objetos
+        Aluno neny = new Aluno("Neny", 22);
+        Aluno neny2 = new Aluno("Neny Gorda", 235);
+        System.out.println();
     
     }  
 }

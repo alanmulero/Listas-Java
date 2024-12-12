@@ -17,6 +17,7 @@ public class Curso {
     private String nome;
     private String instrutor;
     private List<Aula> aulas = new LinkedList<Aula>();
+    private List<Aluno> alunos = new ArrayList<>();
 
     public Curso(String nome, String instrutor) {
         this.nome = nome;
@@ -26,7 +27,13 @@ public class Curso {
     public List<Aula> getAulas() {
         return Collections.unmodifiableList(aulas); // Devolve uma copia que não pode ser alterada
     }
-    
+
+    // método para ver se aluno esta matriculado
+    public boolean estaMatriculado(Aluno aluno) {
+        return this.alunos.contains(aluno);
+    }
+
+
     // Método para adicionar aula e proteger lista
     public void adicionaAula(Aula aula){
         this.aulas.add(aula);

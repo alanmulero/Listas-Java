@@ -10,41 +10,52 @@ public class TestaTabelaEspalhamento {
         // Testando o hashCode()  @Overrride
 
         // Instanciando um conjunto Set
-        Set<TabelaEspalhamento> tabelaEspalhamentos = new HashSet<>();
+        Set<TabelaEspalhamento> tabela = new HashSet<TabelaEspalhamento>();
+        TabelaEspalhamento tabelaEspalhamentos = new TabelaEspalhamento(null, 0);
+        //metodo add()
+        tabelaEspalhamentos.adiconaAluno(new TabelaEspalhamento("Eli",48));
+        tabelaEspalhamentos.adiconaAluno(new TabelaEspalhamento("Queila",50));
+        tabelaEspalhamentos.adiconaAluno(new TabelaEspalhamento("Flavia",36));
+        tabelaEspalhamentos.adiconaAluno(new TabelaEspalhamento("Janaina",46));
 
-        // metodo add()
-//        tabelaEspalhamentos.add(new TabelaEspalhamento("Eli",48));
-//        tabelaEspalhamentos.add(new TabelaEspalhamento("Queila",50));
-//        tabelaEspalhamentos.add(new TabelaEspalhamento("Flavia",36));
-//        tabelaEspalhamentos.add(new TabelaEspalhamento("Janaina",46));
-
-        TabelaEspalhamento t1 = new TabelaEspalhamento("Ana", 16);
+        TabelaEspalhamento t1 = new TabelaEspalhamento("Mulerinho", 16);
         TabelaEspalhamento t2 = new TabelaEspalhamento("Pituca", 11);
         TabelaEspalhamento t3 = new TabelaEspalhamento("Didi", 50);
         TabelaEspalhamento t4 = new TabelaEspalhamento("Alan", 56);
+        
+        tabela.add(t1);
+        tabela.add(t4);
+        
+        for (TabelaEspalhamento item : tabela) {
+			System.out.println(item);
+		}
+        
+        System.out.println(tabela.contains(t4));
+        TabelaEspalhamento tabelaEspalhamento = new TabelaEspalhamento("fusca", 1);
 
-        tabelaEspalhamentos.add(t1);
-        tabelaEspalhamentos.add(t2);
-        tabelaEspalhamentos.add(t3);
-        tabelaEspalhamentos.add(t4);
-        // Removendo objeto
-        tabelaEspalhamentos.remove(t4);
-        tabelaEspalhamentos.add(new TabelaEspalhamento("Ana jujuba", 02));
-        // testando objetos
-        t1.adiconaAluno(t3);
+   
+        // testando objetos com contains()
+        tabelaEspalhamento.adiconaAluno(t3);
+        System.out.println(tabelaEspalhamento);
+        System.out.println(tabelaEspalhamento.estaCadastrado(t3));
 
         // não respeita a ordem
-        for(TabelaEspalhamento t: tabelaEspalhamentos){
-            System.out.println(t);
-        }
+    
 
         Aluno testeSet = new Aluno("Mulero" ,123);
 
-
+        // Testando equals()
+        TabelaEspalhamento novoAluno = new TabelaEspalhamento("Mulerinho", 100);
+        novoAluno.adiconaAluno(t2);
+        novoAluno.estaCadastrado(novoAluno);
+        // testando equals() nome novoAluno e t1 = Mulerinho
+        System.out.println(novoAluno.equals(t1));  // true
+        
 
 
 
 
 
     }
+
 }

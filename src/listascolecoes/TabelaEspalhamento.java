@@ -42,10 +42,12 @@ public class TabelaEspalhamento {
                 ", setAluno=" + setAluno +
                 '}';
     }
-
+    
+    
+    // Reescrevendo hashCode(), o ideal é reecrever o hashCode() toda vez que reescrever o equals()
 	@Override
 	public int hashCode() {
-		return Objects.hash(nome, numeroMatricula);
+		return this.nome.hashCode();
 	}
 
 
